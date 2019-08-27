@@ -32,19 +32,25 @@ sudo systemctl stop hostapd
 ```
 
 
-We switch the interface into monitor mode to allow it to broadcast.
+###We switch the interface into monitor mode to allow it to broadcast.
 Not needed
+
 ```
 ifconfig
 ifconfig wlan0 down
 iwconfig wlan0 mode monitor
 ifconfig wlan0 up 
 ```
- Now we create the hostapd.conf file
+
+### Now we create the hostapd.conf file
+
+
 ```
 nano hostapd.conf
 ```
+
 In the file write the following
+---
 ```
 interface=wlan0
 driver=nl80211
@@ -62,11 +68,13 @@ wpa_passphrase=pass
 ```	
 Now save the file 
 And edit the dnsmasq.conf
-
+---
 ```
 nano /etc/dnsmasq.conf
 ```
+
 The in the dnsmasq.conf add the following 
+
 ```
 Interface=wlan0
 dhcp-range=192.168.8.2,192.168.8.30,255.255.255.0,12h
@@ -77,7 +85,10 @@ log-queries
 log-dhcp
 listen-address=192.168.8.0
 ```
------traffic forwarding----------------------------------------------------------------------------------------------------
+
+### TRAFFIC FORWARDING WORK IN PROGRSS ###
+---
+
 Set up traffic forwarding, edit the sysctl.conf file
 ```
 sudo nano /etc/sysctl.conf
@@ -89,7 +100,8 @@ net.ipv4.ip_forward=1
 WORK IN PROGRESS
 Currently working on setting up ip forwarding to set up a nat connection to give all those who connect internet access.
 -------------------------------------------------------------------------------------------------------------------------------
-Now we have our AP configured
+
+### Now we have our AP configured
 
 Now we create the hostapd script to activate the AP
 
