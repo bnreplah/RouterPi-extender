@@ -1,2 +1,2 @@
 # RouterPi-extender
-a Work in progress project to try to create a router pi, all the articles i find are missing things restricting it from working. My goal is to put this together for a raspberrypi 3b+ running kali linux 64bit
+I was attempting to create a router repeater using the raspberry pi. I found some articles and walk throuhgs, they may have worked on raspbian, but didn't work for me on my kali pi. So I decided to create my own ap to both work as travel router and repeater. In the walk through I will enumerate my procces of both understanding and developing the AP/routerPi and I will create a automated setup for the conslusion of my findings
