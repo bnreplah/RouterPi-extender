@@ -97,9 +97,12 @@ Add the following/uncomment the line
 ```
 net.ipv4.ip_forward=1
 ```
-WORK IN PROGRESS
+
+
+WORK IN PROGRESS:
+
 Currently working on setting up ip forwarding to set up a nat connection to give all those who connect internet access.
--------------------------------------------------------------------------------------------------------------------------------
+---
 
 ### Now we have our AP configured
 
@@ -130,6 +133,7 @@ dnsmasq -C dnsmasq.conf -d
 ```
 
 ----Troubleshooting-------------------------------------------------------------------------------------------------------
+
 When I run the my “startHostapd” script that I wrote it I get an error:
 	Line 2: invalid/unknown driver 'nl80211'
 My issue turned out that instead of n1 it needs to be nl as in nL and I was able to start my AP
